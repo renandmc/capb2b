@@ -1,5 +1,5 @@
 {
-    "name": "Back to basics - SAP CAP - dev container",
+    "name": "Back to basics - SAP CAP",
     "build": {
         "dockerfile": "Dockerfile",
         "args": {
