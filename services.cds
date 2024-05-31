@@ -1,4 +1,11 @@
-@impl: 'banana.js' 
-service say {
-    function hello (to:String) returns String;
+using {cuid} from '@sap/cds/common';
+
+service bookshop {
+    entity Books : cuid {
+        title : String;
+    }
+
+    entity Authors : cuid {
+        name : String;
+    }
 }
