@@ -1,11 +1,16 @@
-using {cuid} from '@sap/cds/common';
+using {
+    cuid,
+    managed
+} from '@sap/cds/common';
 
 service bookshop {
-    entity Books : cuid {
-        title : String;
+    entity Books {
+        key ID    : Integer;
+            title : String;
     }
 
-    entity Authors : cuid {
-        name : String;
+    entity Authors {
+        key ID   : Integer;
+            name : String;
     }
 }

@@ -1,0 +1,28 @@
+@port = 4004
+@baseURL = localhost:{{port}}/odata/v4/bookshop
+###
+# @name Basic
+GET http://{{baseURL}}/
+
+###
+# @name BooksCreate
+POST http://{{baseURL}}/Books
+Content-Type: application/json
+
+{
+    "title": "The Restaurant At The End Of The Universe"
+}
+
+###
+# @name BooksQuery
+GET http://{{baseURL}}/Books
+
+@book_ID = {{ BooksQuery.response.body.value[0].ID }}
+
+###
+# @name BooksGetOne
+GET http://{{baseURL}}/Books({{book_ID}})
+
+###
+# @name DeleteOperation
+DELETE http://{{baseURL}}/Books({{book_ID}})
