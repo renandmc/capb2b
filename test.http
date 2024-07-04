@@ -1,28 +1,25 @@
-@port = 4004
-@baseURL = localhost:{{port}}/odata/v4/bookshop
+@serviceName = bookshop
 ###
-# @name Basic
-GET http://{{baseURL}}/
+# @name QueryBooks
+GET http://localhost:4004/odata/v4/{{serviceName}}/Books
 
 ###
-# @name BooksCreate
-POST http://{{baseURL}}/Books
+# @name CreateNewBook
+POST http://localhost:4004/odata/v4/{{serviceName}}/Books
 Content-Type: application/json
 
-{
-    "title": "The Restaurant At The End Of The Universe"
-}
+{"title": "So Long And Thanks For All The Fish"}
 
 ###
-# @name BooksQuery
-GET http://{{baseURL}}/Books
+# @name QueryBooksAgain
+GET http://localhost:4004/odata/v4/{{serviceName}}/Books
 
-@book_ID = {{ BooksQuery.response.body.value[0].ID }}
-
-###
-# @name BooksGetOne
-GET http://{{baseURL}}/Books({{book_ID}})
+@book_ID = {{ QueryBooksAgain.response.body.value[0].ID }}
 
 ###
-# @name DeleteOperation
-DELETE http://{{baseURL}}/Books({{book_ID}})
+# @name ReadSpecificBookEntity
+GET http://localhost:4004/odata/v4/{{serviceName}}/Books({{book_ID}})
+
+###
+# @name DeleteSpecificBookEntity
+DELETE http://localhost:4004/odata/v4/{{serviceName}}/Books({{book_ID}})

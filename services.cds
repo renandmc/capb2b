@@ -1,16 +1,16 @@
 using {
     cuid,
-    managed
+    managed,
+    Country
 } from '@sap/cds/common';
 
 service bookshop {
-    entity Books {
-        key ID    : Integer;
-            title : String;
+    entity Books : cuid {
+        title : String;
     }
 
-    entity Authors {
-        key ID   : Integer;
-            name : String;
+    entity Authors : cuid {
+        name : String;
+        countryOfBirth: Country;
     }
 }
