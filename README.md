@@ -1,25 +1,12 @@
-# Getting Started
+# CAP B2B - CAP Back to basics
 
-Welcome to your new project.
+### Prerequisites
 
-It contains these folders and files, following our recommended project layout:
+- Docker
+- VS Code (with [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers))
 
-File or Folder | Purpose
----------|----------
-`app/` | content for UI frontends goes here
-`db/` | your domain models and data go here
-`srv/` | your service models and code go here
-`package.json` | project metadata and configuration
-`readme.md` | this getting started guide
+### Install
 
-
-## Next Steps
-
-- Open a new terminal and run `cds watch`
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
-
-
-## Learn More
-
-Learn more at https://cap.cloud.sap/docs/get-started/.
+1. Clone or download project
+2. Open project folder on VS Code
+3. Start dev container
